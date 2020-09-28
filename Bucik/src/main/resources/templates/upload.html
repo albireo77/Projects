@@ -1,0 +1,42 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" th:action="@{/upload}">
+			<table>
+				<tr>
+					<td>Plik z historią kredytu:</td>
+					<td><input type="file" name="file" /></td>
+				</tr>
+				<tr>
+					<td>Waluta docelowa:</td>
+					<td>
+						<select type="select" id="targetCurrency" name="targetCurrency">
+							<option value="PLN">PLN</option>
+							<option value="EUR">EUR</option>
+							<option value="USD">USD</option>
+							<option value="GBP">GBP</option>
+							<option value="CHF">CHF</option>
+						</select>
+					<td>
+				</tr>
+				<tr>
+					<td>Poprawka między kursem waluty banku a ECB:</td>
+					<td>
+						<input id="rateCorrection" name="rateCorrection" value="0.05">
+					</td>
+					<td>(wartość 0.05 odpowiada 5 groszom)</td>
+				</tr>
+				<tr><td><input type="submit" value="Załaduj" /></td></tr>
+				<tr>Poniższy kalkulator uwzględnia kursy historyczne wymiany walut ECB (European Central Bank) a nie banku.</tr>
+				<tr> Z tego powodu uzyskane wyniki mają jedynie wartość orientacyjną i nie będą identyczne z saldem kredytu według banku.</tr>
+				<hr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
