@@ -1,5 +1,8 @@
 package org.dmx.pn.utils;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.function.DoubleBinaryOperator;
 
@@ -38,18 +41,26 @@ public class PolishNotation {
         return stack.size() == 1 ? stack.getFirst() : Double.NaN;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        List<String> lines = new ArrayList<>();
+        List<String> lines;
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter list of expressions in Polish Notation to evaluate (to stop enter empty line): ");
-        while (sc.hasNextLine()) {
-            String line = sc.nextLine();
-            if (line.isEmpty()) {
-                break;
+        String filePath = System.getProperty("filePath");
+        if (filePath != null) {
+            System.out.println("Reading Polish Notation expressions from file " + filePath);
+            lines = Files.readAllLines(Paths.get(filePath));
+        } else {
+            System.out.println("Reading Polish Notation expressions from console");
+            System.out.println("Enter expressions line by line. To stop enter empty line: ");
+            lines = new ArrayList<>();
+            Scanner sc = new Scanner(System.in);
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                if (line.isEmpty()) {
+                    break;
+                }
+                lines.add(line);
             }
-            lines.add(line);
         }
 
         System.out.println("Evaluated expressions:");
