@@ -18,7 +18,7 @@ import org.springframework.web.context.annotation.RequestScope;
 public class ApiConfig {
 
     @Autowired
-    OAuth2AuthorizedClientService clientService;
+    private OAuth2AuthorizedClientService clientService;
 
     @Bean
     @RequestScope

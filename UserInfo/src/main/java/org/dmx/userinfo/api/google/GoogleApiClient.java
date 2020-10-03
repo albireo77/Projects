@@ -13,7 +13,7 @@ public class GoogleApiClient extends ApiClient {
     }
 
     @Override
-    public String getUrl() {
+    protected String getUserUrl() {
         return baseUrl + "/userinfo";
     }
 }

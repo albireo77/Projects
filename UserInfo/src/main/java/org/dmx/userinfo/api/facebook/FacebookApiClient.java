@@ -13,7 +13,7 @@ public class FacebookApiClient extends ApiClient {
     }
 
     @Override
-    public String getUrl() {
+    protected String getUserUrl() {
         return baseUrl + "/me";
     }
 }

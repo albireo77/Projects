@@ -13,7 +13,7 @@ public class GitHubApiClient extends ApiClient {
     }
 
     @Override
-    public String getUrl() {
+    protected String getUserUrl() {
         return baseUrl + "/user";
     }
 }

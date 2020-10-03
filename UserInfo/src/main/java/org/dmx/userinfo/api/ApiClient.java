@@ -6,14 +6,14 @@ import org.springframework.web.client.RestTemplate;
 
 public abstract class ApiClient {
 
-    protected RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     public ApiClient(String accessToken) {
-        this.restTemplate = new RestTemplate();
+        restTemplate = new RestTemplate();
         if (accessToken != null) {
-            this.restTemplate.getInterceptors().add(getBearerTokenInterceptor(accessToken));
+            restTemplate.getInterceptors().add(getBearerTokenInterceptor(accessToken));
         } else {
-            this.restTemplate.getInterceptors().add(getNoTokenInterceptor());
+            restTemplate.getInterceptors().add(getNoTokenInterceptor());
         }
     }
 
@@ -31,8 +31,8 @@ public abstract class ApiClient {
     }
 
     public <T> T getUserInfo(Class<T> aClass) {
-        return restTemplate.getForObject(getUrl(), aClass);
+        return restTemplate.getForObject(getUserUrl(), aClass);
     }
 
-    public abstract String getUrl();
+    protected abstract String getUserUrl();
 }
