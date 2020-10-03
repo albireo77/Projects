@@ -1,6 +1,6 @@
-package org.dmx.oauth.web;
+package org.dmx.userinfo.web;
 
-import org.dmx.oauth.api.ApiClient;
+import org.dmx.userinfo.api.ApiClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,9 +1,9 @@
-package org.dmx.oauth.config;
+package org.dmx.userinfo.config;
 
-import org.dmx.oauth.api.ApiClient;
-import org.dmx.oauth.api.facebook.FacebookApiClient;
-import org.dmx.oauth.api.github.GitHubApiClient;
-import org.dmx.oauth.api.google.GoogleApiClient;
+import org.dmx.userinfo.api.ApiClient;
+import org.dmx.userinfo.api.facebook.FacebookApiClient;
+import org.dmx.userinfo.api.github.GitHubApiClient;
+import org.dmx.userinfo.api.google.GoogleApiClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package org.dmx.oauth.api.google;
+package org.dmx.userinfo.api.google;
 
-import org.dmx.oauth.api.ApiClient;
+import org.dmx.userinfo.api.ApiClient;
 import org.springframework.beans.factory.annotation.Value;
 
 public class GoogleApiClient extends ApiClient {

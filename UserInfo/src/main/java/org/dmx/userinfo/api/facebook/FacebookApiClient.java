@@ -1,6 +1,6 @@
-package org.dmx.oauth.api.facebook;
+package org.dmx.userinfo.api.facebook;
 
-import org.dmx.oauth.api.ApiClient;
+import org.dmx.userinfo.api.ApiClient;
 import org.springframework.beans.factory.annotation.Value;
 
 public class FacebookApiClient extends ApiClient {

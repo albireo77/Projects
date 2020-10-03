@@ -1,4 +1,4 @@
-package org.dmx.oauth.api;
+package org.dmx.userinfo.api;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;

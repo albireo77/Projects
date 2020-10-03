@@ -1,6 +1,6 @@
-package org.dmx.oauth.api.github;
+package org.dmx.userinfo.api.github;
 
-import org.dmx.oauth.api.ApiClient;
+import org.dmx.userinfo.api.ApiClient;
 import org.springframework.beans.factory.annotation.Value;
 
 public class GitHubApiClient extends ApiClient {
