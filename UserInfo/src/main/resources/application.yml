@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /UserInfo
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: enter client id for GitHub
+            client-secret: enter client secret for GitHub
+          facebook:
+            client-id: enter client id for Facebook
+            client-secret: enter client secret for Facebook
+          google:
+            client-id: enter client id for Google
+            client-secret: enter client secret for Google
+
+github:
+  base:
+    url: https://api.github.com
+
+facebook:
+  base:
+    url: https://graph.facebook.com/v2.12
+
+google:
+  base:
+    url: https://www.googleapis.com/oauth2/v3
