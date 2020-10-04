@@ -45,8 +45,6 @@ public class PolishNotation {
 
         List<String> lines;
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("I am hook")));
-
         String filePath = System.getProperty("filePath");
         if (filePath != null) {
             System.out.println("Reading Polish Notation expressions from file " + filePath);
@@ -76,6 +74,5 @@ public class PolishNotation {
                 System.out.printf(Locale.US, "%.2f%n", d);
             }
         }
-        //Runtime.getRuntime().halt(0);
     }
 }
