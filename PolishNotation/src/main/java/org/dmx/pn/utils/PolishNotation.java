@@ -6,6 +6,9 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.function.DoubleBinaryOperator;
 
+/**
+ * Utility class to evaluate expressions in Polish Notation.
+ */
 public class PolishNotation {
 
     private static final Map<String, DoubleBinaryOperator> OPERATIONS = Map.of(
