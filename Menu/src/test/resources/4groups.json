@@ -1,0 +1,56 @@
+{
+    "positions": [
+        {
+            "type": "dish",
+            "name": "hot dog",
+            "description": "hot dog",
+            "price": 4.5
+        },
+        {
+            "type": "dish",
+            "name": "Sprite",
+            "description": "in green can",
+            "price": 2
+        },
+        {
+            "type": "set",
+            "name": "Happy Meal",
+            "description": "for kids",
+            "price": 10,
+            "groups": {
+                "main course": [
+                    {
+                        "name": "Cheeseburger",
+                        "description": "Burger with cheese"
+                    },
+                    {
+                        "name": "McNuggets",
+                        "description": "pieces of chicken"
+                    }
+                ],
+                "addon": [
+                    {
+                        "name": "fries",
+                        "description": "everybody knows" 
+                    }
+                ],
+                "drink": [
+                    {
+                        "name": "Coca Cola",
+                        "description": "with lots of sugar"
+                    },
+                    {
+                        "name": "Coca Cola Zero",
+                        "description": "with no sugar"
+                    }
+                ],
+                "dessert": [
+                    {
+                        "name": "Ice cream",
+                        "description": "cold"
+                    }
+                ]        
+            }
+        }
+    ]
+}

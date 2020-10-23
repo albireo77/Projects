@@ -1,0 +1,10 @@
+{
+    "positions": [
+        {
+            "type": "dish",
+            "name": "hot dog",
+            "description": "hot dog",
+            "price": 4.5
+        }
+    ]
+}
