@@ -18,7 +18,7 @@
             "description": "for kids",
             "price": 10,
             "groups": {
-                "main course": [
+                "MAIN_COURSE": [
                     {
                         "name": "Cheeseburger",
                         "description": "Burger with cheese"
@@ -28,13 +28,13 @@
                         "description": "pieces of chicken"
                     }
                 ],
-                "addon": [
+                "ADD_ON": [
                     {
                         "name": "fries",
                         "description": "everybody knows" 
                     }
                 ],
-                "drink": [
+                "DRINK": [
                     {
                         "name": "Coca Cola",
                         "description": "with lots of sugar"
@@ -44,7 +44,7 @@
                         "description": "with no sugar"
                     }
                 ],
-                "dessert": [
+                "DESSERT": [
                     {
                         "name": "Ice cream",
                         "description": "cold"

@@ -3,7 +3,7 @@ package org.dmx.menu.domain;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,9 +14,9 @@ public class DishSet implements MenuPosition {
     private String description;
     private BigDecimal price;
 
-    private final Map<String, List<Item>> groups = new HashMap<>();
+    private final Map<Group, List<Item>> groups = new EnumMap<>(Group.class);
 
-    public Map<String, List<Item>> getGroups() {
+    public Map<Group, List<Item>> getGroups() {
         return groups;
     }
 
@@ -33,5 +33,9 @@ public class DishSet implements MenuPosition {
     @Override
     public BigDecimal getPrice() {
         return price;
+    }
+
+   public enum Group {
+        MAIN_COURSE, ADD_ON, DRINK, DESSERT
     }
 }
