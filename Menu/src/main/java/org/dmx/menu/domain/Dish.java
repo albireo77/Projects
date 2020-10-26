@@ -7,8 +7,16 @@ import java.math.BigDecimal;
 @JsonTypeName("dish")
 public class Dish implements MenuPosition {
 
-    private final Item item = new Item();
+    private final Item item;
     private BigDecimal price;
+
+    public Dish() {
+        this.item = new Item();
+    }
+
+    public Dish(Item item) {
+        this.item = item;
+    }
 
     @Override
     public String getName() {
