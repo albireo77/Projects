@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class InMemoryMenuRepository implements MenuRepository {
 
     private final Map<Integer, Menu> repository = new ConcurrentHashMap<>();
+    private final AtomicInteger idGenerator = new AtomicInteger();
 
     @Override
     public List<Menu> getAll() {
@@ -27,7 +29,7 @@ public class InMemoryMenuRepository implements MenuRepository {
     @Override
     public Menu create(Menu menu) {
         if (menu.isNew()) {
-            menu.setId(repository.size());
+            menu.setId(idGenerator.getAndIncrement());
         }
         repository.put(menu.getId(), menu);
         return menu;
