@@ -11,13 +11,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
 
 @Controller
 public class CalculationController {
 
-    private static final List<String> ACCEPTABLE_MIME_TYPES = Arrays.asList("application/vnd.ms-excel", "text/plain", "text/csv");
+    private static final Set<String> ACCEPTABLE_MIME_TYPES = Set.of("application/vnd.ms-excel", "text/plain", "text/csv");
 
     private final CalculationService calculationService;
 
