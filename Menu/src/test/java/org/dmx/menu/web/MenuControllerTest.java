@@ -1,5 +1,7 @@
 package org.dmx.menu.web;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.dmx.menu.error.ApplicationError;
 import org.dmx.menu.service.MenuService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,8 +14,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
@@ -26,6 +28,8 @@ class MenuControllerTest {
     @MockBean
     private MenuService menuService;
 
+    private ObjectMapper mapper = new ObjectMapper();
+
     @Test
     void testOkRequest() throws Exception {
         mockMvc.perform(post("/menu")
@@ -36,11 +40,17 @@ class MenuControllerTest {
 
     @Test
     void testBadRequestWith4Groups() throws Exception {
-        mockMvc.perform(post("/menu")
+
+        String response = mockMvc.perform(post("/menu")
                 .contentType("application/json")
                 .content(fromFile("4groups.json")))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().json("{\"errorMessage\":\"Set must have 1-3 groups\"}"));
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
+
+        ApplicationError error = mapper.readValue(response, ApplicationError.class);
+        assertEquals("Set must have 1-3 groups", error.getErrorMessage());
     }
 
     private byte[] fromFile(String path) throws IOException {
